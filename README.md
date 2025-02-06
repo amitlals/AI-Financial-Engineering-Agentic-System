@@ -4,6 +4,37 @@
 
 This repository provides a structured framework for setting up an **AI-driven financial engineering and marketing analysis agentic system** using **Azure AI Agent Service SDK**. It includes:
 
+---
+
+## 🤖 AI Agents Overview - Autogen & Azure AI foundry with Azure AI Agent Services
+
+The system incorporates multiple AI-driven agents specialized in different aspects of financial and market analysis -
+<img width="962" alt="image" src="https://github.com/user-attachments/assets/93990da8-b6eb-4c12-ad4c-3d9cabaadf81" />
+
+### **Agent Name and Flows**
+### 1️⃣ **Market Analysis Agent**
+   - Analyzes market trends and customer behavior.
+   - Identifies key business opportunities.
+   - Provides insights on geographic demand and economic patterns.
+
+### 2️⃣ **Financial Analysis Agent**
+   - Evaluates company financials, balance sheets, and performance metrics.
+   - Assesses cost efficiency and growth opportunities.
+   - Conducts risk assessments and budget optimization.
+
+### 3️⃣ **News Analysis Agent**
+   - Scrapes and analyzes financial news articles.
+   - Identifies impactful trends in the industry.
+   - Provides strategic implications of economic events.
+
+### 4️⃣ **Strategic Planning Agent**
+   - Develops three unique business strategies based on market and financial insights.
+   - Creates an implementation roadmap for each strategy.
+   - Conducts risk-benefit analysis and final recommendations.
+
+---
+
+
 - A structured Python project template
 - Required dependencies (`requirements.txt`)
 - Configuration file templates (`.env`, `config.ini`)
@@ -70,7 +101,6 @@ pip install -r requirements.txt
    MODEL_API_VERSION=2024-02-15-preview
    ```
 
----
 
 ## 📜 Azure AI Agent Service SDK Setup
 
