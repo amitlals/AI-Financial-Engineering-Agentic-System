@@ -9,6 +9,9 @@ This repository provides a structured framework for setting up an **AI-driven fi
 ## 🤖 AI Agents Overview - Autogen & Azure AI foundry with Azure AI Agent Services
 
 The system incorporates multiple AI-driven agents specialized in different aspects of financial and market analysis -
+![image](https://github.com/user-attachments/assets/7d8ba4bd-84b0-4458-90a5-dd835faab8d4)
+<br>
+Behind the scene Autogen agents in play -
 <img width="962" alt="image" src="https://github.com/user-attachments/assets/93990da8-b6eb-4c12-ad4c-3d9cabaadf81" />
 
 ### **Agent Name and Flows**
