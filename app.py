@@ -14,14 +14,14 @@ class DataConnector:
         self.base_url = os.getenv("SAP_ODATA_BASE_URL", "")
         self.username = os.getenv("SAP_ODATA_USERNAME", "")
         self.password = os.getenv("SAP_ODATA_PASSWORD", "")
-        self.client = os.getenv("SAP_ODATA_CLIENT", "100")
+        self.client = os.getenv("SAP_ODATA_CLIENT", "")
         
         self.headers = {
             "Accept": "application/json",
             "Content-Type": "application/json"
         }
         
-        # Add SAP client header if specified
+        # Add SAP client header if explicitly specified
         if self.client:
             self.headers["sap-client"] = self.client
         
@@ -30,9 +30,16 @@ class DataConnector:
         if self.username and self.password:
             self.auth = (self.username, self.password)
         
-        print(f"Configured SAP OData Service URL: {self.base_url}")
+        # Validate configuration and print status
+        if not self.base_url:
+            print("⚠️ SAP OData Service URL not configured. Set SAP_ODATA_BASE_URL environment variable.")
+        else:
+            print(f"Configured SAP OData Service URL: {self.base_url}")
 
     def test_connection(self):
+        if not self.base_url:
+            print("❌ SAP OData Service URL not configured. Cannot test connection.")
+            return False
         try:
             test_url = f"{self.base_url}/Products?$top=1&$format=json"
             print(f"Testing connection to: {test_url}")
