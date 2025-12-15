@@ -29,6 +29,8 @@ class DataConnector:
         self.auth = None
         if self.username and self.password:
             self.auth = (self.username, self.password)
+        elif self.username or self.password:
+            print("⚠️ Incomplete SAP OData credentials. Both username and password are required for authentication.")
         
         # Validate configuration and print status
         if not self.base_url:
@@ -52,6 +54,9 @@ class DataConnector:
             return False
 
     def fetch_orders(self):
+        if not self.base_url:
+            print("❌ SAP OData Service URL not configured. Cannot fetch orders.")
+            return []
         try:
             url = f"{self.base_url}/Orders"
             params = {
@@ -71,6 +76,9 @@ class DataConnector:
             return []
 
     def fetch_products(self):
+        if not self.base_url:
+            print("❌ SAP OData Service URL not configured. Cannot fetch products.")
+            return []
         try:
             url = f"{self.base_url}/Products"
             params = {
