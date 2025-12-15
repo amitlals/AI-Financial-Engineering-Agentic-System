@@ -10,18 +10,33 @@ load_dotenv()
 
 class DataConnector:
     def __init__(self):
-        #self.base_url = "Fabric onelake link"
+        # SAP OData connection configuration from environment variables
+        self.base_url = os.getenv("SAP_ODATA_BASE_URL", "")
+        self.username = os.getenv("SAP_ODATA_USERNAME", "")
+        self.password = os.getenv("SAP_ODATA_PASSWORD", "")
+        self.client = os.getenv("SAP_ODATA_CLIENT", "100")
+        
         self.headers = {
             "Accept": "application/json",
             "Content-Type": "application/json"
         }
-        print(f"Configured Service URL: {self.base_url}")
+        
+        # Add SAP client header if specified
+        if self.client:
+            self.headers["sap-client"] = self.client
+        
+        # Setup authentication if credentials are provided
+        self.auth = None
+        if self.username and self.password:
+            self.auth = (self.username, self.password)
+        
+        print(f"Configured SAP OData Service URL: {self.base_url}")
 
     def test_connection(self):
         try:
             test_url = f"{self.base_url}/Products?$top=1&$format=json"
             print(f"Testing connection to: {test_url}")
-            response = requests.get(test_url, headers=self.headers)
+            response = requests.get(test_url, headers=self.headers, auth=self.auth)
             response.raise_for_status()
             print("✅ Connection test successful")
             return True
@@ -38,7 +53,7 @@ class DataConnector:
                 "$select": "OrderID,CustomerID,OrderDate,ShipCity,ShipCountry"
             }
             print(f"Fetching orders from: {url}")
-            response = requests.get(url, params=params, headers=self.headers)
+            response = requests.get(url, params=params, headers=self.headers, auth=self.auth)
             response.raise_for_status()
             data = response.json()
             orders = data.get('d', [])
@@ -57,7 +72,7 @@ class DataConnector:
                 "$select": "ProductID,ProductName,UnitPrice,UnitsInStock,CategoryID"
             }
             print(f"Fetching products from: {url}")
-            response = requests.get(url, params=params, headers=self.headers)
+            response = requests.get(url, params=params, headers=self.headers, auth=self.auth)
             response.raise_for_status()
             data = response.json()
             products = data.get('d', [])
