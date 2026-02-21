@@ -490,7 +490,35 @@ python sap-finance-analysis-withUI-8-FINAL-ES5-FINAL_AgentFramework.py
 - **Add Approval Workflow:** Extend Logic App with Microsoft Teams approval before email
 
 ---
+## 📝 Citation
 
+If you use this project in your research or work, please cite:
+```bibtex
+@article{lal2025aiagents,
+  title={A Survey of AI Agent Architectures in Enterprise SAP Ecosystems},
+  author={Lal, Amit},
+  year={2025},
+  publisher={TechRxiv},
+  note={Preprint}
+}
+```
+```bibtex
+@article{lal2025rpt1,
+  title={Evaluating SAP RPT-1 for Enterprise Business Process Prediction},
+  author={Lal, Amit},
+  year={2025},
+  publisher={TechRxiv},
+  note={Preprint}
+}
+```
+```bibtex
+@book{lal2024ai2040,
+  title={AI in 2040},
+  author={Lal, Amit},
+  year={2024},
+  isbn={9798346459941}
+}
+```
 ## 📜 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
