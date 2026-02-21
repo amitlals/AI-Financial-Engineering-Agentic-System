@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "AI-Financial-Engineering-Agentic-System"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Lal
+    given-names: Amit
+    orcid: "https://orcid.org/0009-0005-8816-3608"
+    affiliation: "Microsoft Corporation"
+repository-code: "https://github.com/amitlals/AI-Financial-Engineering-Agentic-System"
+url: "https://www.amit-lal.com"
+license: MIT
+keywords:
+  - AI agents
+  - financial analysis
+  - Azure AI Foundry
+  - multi-agent systems
+  - SAP FI/CO
+preferred-citation:
+  type: article
+  title: "A Survey of AI Agent Architectures in Enterprise SAP Ecosystems"
+  authors:
+    - family-names: Lal
+      given-names: Amit
+      orcid: "https://orcid.org/0009-0005-8816-3608"
+  year: 2025
+  publisher:
+    name: "TechRxiv"
+  url: "https://www.techrxiv.org"
+  notes: "Preprint"
